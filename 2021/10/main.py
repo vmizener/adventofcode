@@ -30,13 +30,7 @@ def part1(lines):
 
 
 def part2(lines):
-    in_pairs = {
-        "(": ")",
-        "[": "]",
-        "{": "}",
-        "<": ">",
-    }
-    out_pairs = {
+    pairs = {
         ")": "(",
         "]": "[",
         "}": "{",
@@ -48,7 +42,7 @@ def part2(lines):
         for c in line:
             if c in "([{<":
                 stack.append(c)
-            elif len(stack) == 0 or out_pairs[c] != stack[-1]:
+            elif len(stack) == 0 or pairs[c] != stack[-1]:
                 break
             else:
                 stack.pop()
