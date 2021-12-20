@@ -48,6 +48,7 @@ def part1(fish_list, days=80):
 def part2(fish_list, days=256):
     d = {}
 
+    # Count descendents after X days, given a '6' fish
     def count_descendents(days):
         if days in d:
             return d[days]
